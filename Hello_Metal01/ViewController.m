@@ -22,7 +22,8 @@
     [super viewDidLoad];
     
     //1.获取_view
-    _view = (MTKView *)self.view;
+    _view = [[MTKView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_view];
     
     //2.为_view 设置MTLDevice(必须)
     //一个MTLDevice 对象就代表这着一个GPU,通常我们可以调用方法MTLCreateSystemDefaultDevice()来获取代表默认的GPU单个对象
